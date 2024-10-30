@@ -31,7 +31,7 @@ class State:
 class MazeSolver:
     def __init__(self, maze: List[str], stone_weights: List[int]):
         # Clean up the maze input
-        self.maze = [row.rstrip() for row in maze] #TODO - don't remove leading/trailing spaces
+        self.maze = [row.rstrip() for row in maze] 
         self.width = max(len(row) for row in self.maze)
         self.maze = [row.ljust(self.width) for row in self.maze]
         self.height = len(self.maze)
@@ -108,7 +108,7 @@ class MazeSolver:
             
         return '\n'.join(''.join(row) for row in grid)
 
-    def is_valid_pos(self, pos: Position) -> bool: #TODO - lack of invalid position check
+    def is_valid_pos(self, pos: Position) -> bool:
         return (0 <= pos.x < self.height and 0 <= pos.y < self.width and pos not in self.walls)
 
     def get_initial_state(self) -> State:
